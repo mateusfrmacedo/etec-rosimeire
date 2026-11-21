@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5eddb">
+  <meta name="description" content="Simulado de Língua Portuguesa para o Vestibulinho ETEC de São José do Rio Preto.">
+  <title>Prova Preparatória ETEC São José do Rio Preto</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="questions.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="sheet">
+    <header class="masthead">
+      <div class="eyebrow">Caderno de estudos · Língua Portuguesa</div>
+      <h1>Prova Preparatória<br><span>ETEC São José do Rio Preto</span></h1>
+      <p class="teacher">Professora Rosimeire</p>
+      <div class="rule"><span>✳</span></div>
+    </header>
+
+    <section id="welcome" class="panel" aria-labelledby="welcome-title">
+      <p class="kicker">Vamos começar</p>
+      <h2 id="welcome-title">Prepare seu simulado</h2>
+      <p class="intro">Questões de Língua Portuguesa inspiradas no estilo e nos temas dos Vestibulinhos ETEC. Leia com calma e marque uma alternativa por questão.</p>
+      <form id="start-form">
+        <label for="student-name">Seu nome</label>
+        <input id="student-name" name="name" type="text" maxlength="50" autocomplete="name" placeholder="Como podemos chamar você?" required>
+        <fieldset>
+          <legend>Quantidade de questões</legend>
+          <div class="choices-count">
+            <label class="count-option"><input type="radio" name="count" value="10" checked><span>10</span></label>
+            <label class="count-option"><input type="radio" name="count" value="20"><span>20</span></label>
+            <label class="count-option"><input type="radio" name="count" value="30"><span>30</span></label>
+          </div>
+        </fieldset>
+        <button class="button primary" type="submit">Começar prova <span aria-hidden="true">→</span></button>
+      </form>
+      <p class="small-note">Cada nova tentativa recebe uma seleção aleatória.</p>
+    </section>
+
+    <section id="quiz" class="panel hidden" aria-live="polite" aria-labelledby="quiz-heading">
+      <div class="quiz-top"><span id="student-greeting"></span><span id="progress-label"></span></div>
+      <div class="progress-track" aria-hidden="true"><div id="progress-bar"></div></div>
+      <div id="question-content"></div>
+      <div class="quiz-actions"><button id="previous-button" class="button quiet" type="button">← Anterior</button><button id="next-button" class="button primary" type="button">Próxima →</button></div>
+    </section>
+
+    <section id="result" class="panel hidden" aria-live="polite" aria-labelledby="result-heading">
+      <p class="kicker">Fim do simulado</p>
+      <h2 id="result-heading">Muito bem, <span id="result-name"></span>!</h2>
+      <div class="score-card"><span id="score-number"></span><span id="score-detail"></span></div>
+      <p id="result-message" class="intro"></p>
+      <div id="answer-review" class="review"></div>
+      <button id="retry-button" class="button primary" type="button">Fazer novo simulado <span aria-hidden="true">↻</span></button>
+    </section>
+
+    <footer><span>Um passo de cada vez.</span><span>ETEC · São José do Rio Preto</span></footer>
+  </main>
+</body>
+</html>
