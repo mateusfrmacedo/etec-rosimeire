@@ -82,6 +82,9 @@
     }
     if (current === selected.length - 1) finish(); else { current++; render(); }
   });
-  document.querySelector('#download-button').addEventListener('click', () => window.print());
+  document.querySelector('#download-button').addEventListener('click', () => {
+    document.querySelector('#exam-date').textContent = new Date().toLocaleDateString('pt-BR');
+    window.print();
+  });
   document.querySelector('#retry-button').addEventListener('click', () => { result.classList.add('hidden'); welcome.classList.remove('hidden'); window.scrollTo({top:0,behavior:'smooth'}); });
 })();
