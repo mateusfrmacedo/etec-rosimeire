@@ -55,9 +55,6 @@
     const gif = options[Math.floor(Math.random() * options.length)];
     previousGifId = gif.id;
     document.querySelector('#gif-frame').innerHTML = `<iframe src="https://giphy.com/embed/${gif.id}" title="GIF aleatório: ${gif.title}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
-    const source = document.querySelector('#gif-source');
-    source.href = gif.url;
-    source.textContent = `Ver “${gif.title}” no GIPHY`;
   }
   function finish() {
     const correct = selected.reduce((total, q, i) => total + (answers[i] === q.answer ? 1 : 0), 0);
