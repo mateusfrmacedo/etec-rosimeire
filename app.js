@@ -52,30 +52,143 @@
     document.querySelector('#next-button').textContent = current === selected.length - 1 ? 'Finalizar prova ✓' : 'Próxima →';
   }
   const reactionGifs = [
-    {id:'kF09SNtCbPYpePmFFZ', alt:'Dançando de alegria'},
-    {id:'MSTqntEzXV7BmCrhA7', alt:'Dança da vitória'},
-    {id:'3ohhwAlGml7cvIjhks', alt:'Dança feliz'},
-    {id:'cniIdOj3l8JfJjIT4i', alt:'Surpresa e espanto'},
-    {id:'4cUCFvwICarHq', alt:'Reação de surpresa'},
-    {id:'vvjUbQlZc5KzkHKBTF', alt:'Uau!'},
-    {id:'xThtadJ0MZ1rqlc3VS', alt:'Comemoração'},
-    {id:'cBUEZW2ZEVBCxqDTPS', alt:'Festa e comemoração'},
-    {id:'JZLaL7vxYBMwOw4Vjd', alt:'Comemoração colorida'}
+    {id:'HIINnCqY3HpMYudYQn', alt:'GIF de dança'},
+    {id:'13hxeOYjoTWtK8', alt:'GIF de dança'},
+    {id:'8m4R4pvViWtRzbloJ1', alt:'GIF de dança'},
+    {id:'EJMyMO22UxP68', alt:'GIF de dança'},
+    {id:'8pYMOn1sEb43EloTf8', alt:'GIF de dança'},
+    {id:'5xaOcLGvzHxDKjufnLW', alt:'GIF de dança'},
+    {id:'Bl10664xbIVkk', alt:'GIF de dança'},
+    {id:'BSSfrKSIhnLnQirVeY', alt:'GIF de dança'},
+    {id:'J93sVmfYBtsRi', alt:'GIF de dança'},
+    {id:'blSTtZehjAZ8I', alt:'GIF de dança'},
+    {id:'ujTVMASREzuRbH6zy5', alt:'GIF de dança'},
+    {id:'aCB9UFwAw7Nio', alt:'GIF de dança'},
+    {id:'atQF1zaSGq8s8', alt:'GIF de dança'},
+    {id:'scpcMQTvUkA7STaA27', alt:'GIF de dança'},
+    {id:'UZxzsNx1kpZZwTCSSp', alt:'GIF de dança'},
+    {id:'y4PQTcLTYJwOI', alt:'GIF de dança'},
+    {id:'scftgIpdF1V3eFED52', alt:'GIF de dança'},
+    {id:'mFTIkcmQWTbNFrTp2O', alt:'GIF de dança'},
+    {id:'RLcQGYmQU36d3FceiP', alt:'GIF de dança'},
+    {id:'ybnrXkdf8jAxIkMuwr', alt:'GIF de dança'},
+    {id:'pa37AAGzKXoek', alt:'GIF de dança'},
+    {id:'iU0oAa9koDTTodFBsf', alt:'GIF de dança'},
+    {id:'7sYgj8MHgrto9tZthQ', alt:'GIF de dança'},
+    {id:'iWlY7z5YYOtHeSMx5K', alt:'GIF de dança'},
+    {id:'DED9Io0FbQXCQq44NM', alt:'GIF de dança'},
+    {id:'ckqDWRvXTYUWEhPJqj', alt:'GIF de dança'},
+    {id:'VwLzSW0bPiuIuUQbcl', alt:'GIF de dança'},
+    {id:'3ohc0ZorDPrDX46jIs', alt:'GIF de dança'},
+    {id:'mBXgTu7kJFbZ4PJnBR', alt:'GIF de dança'},
+    {id:'8RGjrot0ymGeMZJ9pM', alt:'GIF de dança'},
+    {id:'RVk1nmWV5ZkarghgCy', alt:'GIF de dança'},
+    {id:'8tViNlYfmCJ9syvQQj', alt:'GIF de dança'},
+    {id:'vyfICe0OfKKMUvTx04', alt:'GIF de dança'},
+    {id:'oYtVHSxngR3lC', alt:'GIF de surpresa'},
+    {id:'5VKbvrjxpVJCM', alt:'GIF de surpresa'},
+    {id:'PUBxelwT57jsQ', alt:'GIF de surpresa'},
+    {id:'l3q2K5jinAlChoCLS', alt:'GIF de surpresa'},
+    {id:'Sqfu14lSonVN219Zb6', alt:'GIF de surpresa'},
+    {id:'dnMwfGJPdsqYEbmrD5', alt:'GIF de surpresa'},
+    {id:'QenUl470OqVLRtkmdE', alt:'GIF de surpresa'},
+    {id:'b8RfbQFaOs1rO10ren', alt:'GIF de surpresa'},
+    {id:'QUENDfi6DEMLzQ0CKt', alt:'GIF de surpresa'},
+    {id:'WuGSL4LFUMQU', alt:'GIF de surpresa'},
+    {id:'jrutBd1N7ZhsINAPzs', alt:'GIF de surpresa'},
+    {id:'aWPGuTlDqq2yc', alt:'GIF de surpresa'},
+    {id:'lxxOGaDRk4f7R5TkBd', alt:'GIF de surpresa'},
+    {id:'RLkcGcTtWc7QyQZqSM', alt:'GIF de surpresa'},
+    {id:'vQqeT3AYg8S5O', alt:'GIF de surpresa'},
+    {id:'xfu59Ydps8y6gLl5V3', alt:'GIF de surpresa'},
+    {id:'M33UV4NDvkTHa', alt:'GIF de surpresa'},
+    {id:'3oz8xPIblfyMdZwM8w', alt:'GIF de surpresa'},
+    {id:'TIRlx3Fzi1A7L2d5z7', alt:'GIF de surpresa'},
+    {id:'kxei1ibnxITFUvvtJU', alt:'GIF de surpresa'},
+    {id:'zKBwU2TSfixfz70pJG', alt:'GIF de surpresa'},
+    {id:'fpXxIjftmkk9y', alt:'GIF de surpresa'},
+    {id:'l1J9FiGxR61OcF2mI', alt:'GIF de surpresa'},
+    {id:'l3ih6qeGrTfPO', alt:'GIF de surpresa'},
+    {id:'3XR0chfiSTtAI', alt:'GIF de surpresa'},
+    {id:'e8kZWeeku0pmdWViJj', alt:'GIF de surpresa'},
+    {id:'lsJCkIKV6AT28', alt:'GIF de comemoração'},
+    {id:'BlVnrxJgTGsUw', alt:'GIF de comemoração'},
+    {id:'l0MYt5jPR6QX5pnqM', alt:'GIF de comemoração'},
+    {id:'BPJmthQ3YRwD6QqcVD', alt:'GIF de comemoração'},
+    {id:'IwAZ6dvvvaTtdI8SD5', alt:'GIF de comemoração'},
+    {id:'s2qXK8wAvkHTO', alt:'GIF de comemoração'},
+    {id:'artj92V8o75VPL7AeQ', alt:'GIF de comemoração'},
+    {id:'1PMVNNKVIL8Ig', alt:'GIF de comemoração'},
+    {id:'Q7utFfqUn7Au5w8sAP', alt:'GIF de comemoração'},
+    {id:'PklKBQ4bj7XXRHByqs', alt:'GIF de comemoração'},
+    {id:'W6Lwg2xvTr6tJpuSTd', alt:'GIF de comemoração'},
+    {id:'YTbZzCkRQCEJa', alt:'GIF de comemoração'},
+    {id:'Na33dsU2umStO', alt:'GIF de comemoração'},
+    {id:'axu6dFuca4HKM', alt:'GIF de comemoração'},
+    {id:'doPrWYzSG1Vao', alt:'GIF de comemoração'},
+    {id:'6JzM6pW8Sa8loWxBmt', alt:'GIF de comemoração'},
+    {id:'acBIAKLh4eSCURd6pw', alt:'GIF de comemoração'},
+    {id:'opDRL3H2A9iLNuvbOv', alt:'GIF de comemoração'},
+    {id:'geslvCFM31sFW', alt:'GIF de comemoração'},
+    {id:'AbM71atR2TJQq8c7vw', alt:'GIF de comemoração'},
+    {id:'DJN88m7rzUwpi0pblu', alt:'GIF de comemoração'},
+    {id:'c1AfqKTvATepFDTpnY', alt:'GIF de comemoração'},
+    {id:'6oMKugqovQnjW', alt:'GIF de comemoração'},
+    {id:'ePaw7nwYmSI1t389Sy', alt:'GIF de comemoração'},
+    {id:'3o7abldj0b3rxrZUxW', alt:'GIF de comemoração'},
+    {id:'Vpbfjm1wjl2bMwNAx1', alt:'GIF de comemoração'},
+    {id:'0dKHpamGLycEt3Ffyg', alt:'GIF de comemoração'},
+    {id:'K7sRvxEVDx1ypvk1E1', alt:'GIF de comemoração'},
+    {id:'U0O22ihibGH3cfEawu', alt:'GIF de comemoração'},
+    {id:'NSrjLatVjOB8CEJ3R7', alt:'GIF de comemoração'},
+    {id:'MZrbYTN8Igeu26IubO', alt:'GIF de comemoração'},
+    {id:'2Y8z33M0GB6EqIwnEE', alt:'GIF de comemoração'},
+    {id:'PPT3zw7o6UcUOHu7jE', alt:'GIF de comemoração'},
+    {id:'JWHKTOjqfV91wKdNmF', alt:'GIF de comemoração'},
+    {id:'PAiVD8zhnQSoya1P6y', alt:'GIF de comemoração'},
+    {id:'kF09SNtCbPYpePmFFZ', alt:'GIF de dança'},
+    {id:'MSTqntEzXV7BmCrhA7', alt:'GIF de dança'},
+    {id:'3ohhwAlGml7cvIjhks', alt:'GIF de dança'},
+    {id:'cniIdOj3l8JfJjIT4i', alt:'GIF de surpresa'},
+    {id:'4cUCFvwICarHq', alt:'GIF de surpresa'},
+    {id:'vvjUbQlZc5KzkHKBTF', alt:'GIF de surpresa'},
+    {id:'xThtadJ0MZ1rqlc3VS', alt:'GIF de comemoração'},
+    {id:'cBUEZW2ZEVBCxqDTPS', alt:'GIF de comemoração'},
+    {id:'JZLaL7vxYBMwOw4Vjd', alt:'GIF de comemoração'}
   ];
   const gifStorageKey = 'etecRosimeireGifCycle';
+  const gifIds = reactionGifs.map(gif => gif.id);
+  const legacyGifIds = ['kF09SNtCbPYpePmFFZ','MSTqntEzXV7BmCrhA7','3ohhwAlGml7cvIjhks','cniIdOj3l8JfJjIT4i','4cUCFvwICarHq','vvjUbQlZc5KzkHKBTF','xThtadJ0MZ1rqlc3VS','cBUEZW2ZEVBCxqDTPS','JZLaL7vxYBMwOw4Vjd'];
   let previousGifId = '';
   let gifDeck = [];
+  let gifSeen = new Set();
   try {
     const savedGifState = JSON.parse(localStorage.getItem(gifStorageKey) || '{}');
-    const availableIds = new Set(reactionGifs.map(gif => gif.id));
-    gifDeck = Array.isArray(savedGifState.deck) ? savedGifState.deck.filter(id => availableIds.has(id)) : [];
+    const availableIds = new Set(gifIds);
     previousGifId = availableIds.has(savedGifState.last) ? savedGifState.last : '';
+    if (Array.isArray(savedGifState.catalog)) {
+      gifSeen = new Set(Array.isArray(savedGifState.seen) ? savedGifState.seen.filter(id => availableIds.has(id)) : []);
+      gifDeck = Array.isArray(savedGifState.deck) ? savedGifState.deck.filter(id => availableIds.has(id) && !gifSeen.has(id)) : [];
+      const oldCatalog = new Set(savedGifState.catalog);
+      const addedIds = gifIds.filter(id => !oldCatalog.has(id) && !gifSeen.has(id) && !gifDeck.includes(id));
+      gifDeck = [...gifDeck, ...shuffle(addedIds)];
+    } else if (Array.isArray(savedGifState.deck) || savedGifState.last) {
+      const oldRemaining = new Set(Array.isArray(savedGifState.deck) ? savedGifState.deck : []);
+      const oldIds = new Set(legacyGifIds);
+      gifSeen = new Set(legacyGifIds.filter(id => !oldRemaining.has(id)));
+      const remainingOld = [...oldRemaining].filter(id => availableIds.has(id) && !gifSeen.has(id));
+      const newIds = gifIds.filter(id => !oldIds.has(id));
+      gifDeck = shuffle([...remainingOld, ...newIds]);
+    }
   } catch {
-    // Keep an in-memory shuffled cycle when browser storage is unavailable.
+    // Continua com um ciclo aleatório em memória se o armazenamento do navegador estiver indisponível.
   }
   function showRandomGif() {
     if (!gifDeck.length) {
-      gifDeck = shuffle(reactionGifs.map(gif => gif.id));
+      const unseen = gifIds.filter(id => !gifSeen.has(id));
+      const nextCycle = unseen.length ? unseen : gifIds;
+      if (!unseen.length) gifSeen.clear();
+      gifDeck = shuffle(nextCycle);
       if (gifDeck.length > 1 && gifDeck[0] === previousGifId) {
         [gifDeck[0], gifDeck[1]] = [gifDeck[1], gifDeck[0]];
       }
@@ -83,10 +196,11 @@
     const gif = reactionGifs.find(item => item.id === gifDeck.shift());
     if (!gif) return;
     previousGifId = gif.id;
+    gifSeen.add(gif.id);
     try {
-      localStorage.setItem(gifStorageKey, JSON.stringify({deck: gifDeck, last: previousGifId}));
+      localStorage.setItem(gifStorageKey, JSON.stringify({catalog: gifIds, deck: gifDeck, seen: [...gifSeen], last: previousGifId}));
     } catch {
-      // The current page still continues its in-memory cycle.
+      // O ciclo em memória continua mesmo sem armazenamento local.
     }
     document.querySelector('#gif-frame').innerHTML = `<img src="https://media.giphy.com/media/${gif.id}/giphy.gif" alt="${gif.alt}" loading="lazy" referrerpolicy="no-referrer">`;
   }
