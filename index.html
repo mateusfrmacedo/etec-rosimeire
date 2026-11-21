@@ -16,7 +16,7 @@
       <div class="eyebrow">Caderno de estudos · Língua Portuguesa</div>
       <h1>Prova Preparatória<br><span>ETEC São José do Rio Preto</span></h1>
       <p class="teacher">Professora Rosimeire</p>
-      <div class="rule"><span>✳</span></div>
+      <div class="rule" aria-hidden="true"></div>
     </header>
 
     <section id="welcome" class="panel" aria-labelledby="welcome-title">
@@ -25,7 +25,15 @@
       <p class="intro">Questões de Língua Portuguesa inspiradas no estilo e nos temas dos Vestibulinhos ETEC. Leia com calma e marque uma alternativa por questão.</p>
       <form id="start-form">
         <label for="student-name">Seu nome</label>
-        <input id="student-name" name="name" type="text" maxlength="50" autocomplete="name" placeholder="Como podemos chamar você?" required>
+        <input id="student-name" name="name" type="text" maxlength="50" autocomplete="name" required>
+        <fieldset>
+          <legend>Nível de dificuldade</legend>
+          <div class="choices-count difficulty-options">
+            <label class="count-option"><input type="radio" name="difficulty" value="facil" checked><span>Fácil</span></label>
+            <label class="count-option"><input type="radio" name="difficulty" value="medio"><span>Médio</span></label>
+            <label class="count-option"><input type="radio" name="difficulty" value="dificil"><span>Difícil</span></label>
+          </div>
+        </fieldset>
         <fieldset>
           <legend>Quantidade de questões</legend>
           <div class="choices-count">
@@ -51,6 +59,9 @@
       <h2 id="result-heading">Muito bem, <span id="result-name"></span>!</h2>
       <div class="score-card"><span id="score-number"></span><span id="score-detail"></span></div>
       <p id="result-message" class="intro"></p>
+      <blockquote id="motivation" class="motivation"></blockquote>
+      <button id="download-button" class="button quiet download-button" type="button">Baixar prova em PDF (A4) ↓</button>
+      <p class="small-note">Na janela de impressão, escolha “Salvar como PDF”. O arquivo inclui as questões, alternativas, suas respostas e o gabarito.</p>
       <div id="answer-review" class="review"></div>
       <button id="retry-button" class="button primary" type="button">Fazer novo simulado <span aria-hidden="true">↻</span></button>
     </section>

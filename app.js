@@ -4,7 +4,7 @@
   const result = document.querySelector('#result');
   const form = document.querySelector('#start-form');
   const content = document.querySelector('#question-content');
-  let name = '', selected = [], answers = {}, current = 0, previousSet = '';
+  let name = '', selected = [], answers = {}, current = 0, previousSet = '', activeDifficulty = 'facil';
 
   function shuffle(items) {
     const result = [...items];
@@ -15,14 +15,17 @@
     return result;
   }
   function begin(count) {
-    let pool = shuffle(window.QUESTIONS);
+    const difficultyPools = {facil: [0,3,5,7,9,12,14,17,19,22,30,33,36], medio: [1,4,6,8,10,13,15,18,20,23,31,34,37], dificil: [2,11,16,21,24,25,26,27,28,29,32,35,38]};
+    const allowed = new Set(difficultyPools[activeDifficulty]);
+    let pool = shuffle(window.QUESTIONS.filter((_, index) => allowed.has(index)));
+    count = Math.min(count, pool.length);
     let ids = pool.slice(0, count).map(q => q.text).sort().join('|');
     if (ids === previousSet) pool = shuffle(window.QUESTIONS);
     selected = pool.slice(0, count).map(q => ({...q, order: shuffle([0,1,2,3,4])}));
     previousSet = selected.map(q => q.text).sort().join('|');
     answers = {}; current = 0;
     welcome.classList.add('hidden'); result.classList.add('hidden'); quiz.classList.remove('hidden');
-    document.querySelector('#student-greeting').textContent = `Boa prova, ${name}!`;
+    document.querySelector('#student-greeting').textContent = `Boa prova, ${name}! · ${activeDifficulty[0].toUpperCase()+activeDifficulty.slice(1)}`;
     render(); window.scrollTo({top:0,behavior:'smooth'});
   }
   function render() {
@@ -42,18 +45,23 @@
     document.querySelector('#score-number').textContent = `${correct}/${selected.length}`;
     document.querySelector('#score-detail').textContent = `${Math.round(correct / selected.length * 100)}% de acertos`;
     document.querySelector('#result-message').textContent = correct === selected.length ? 'Excelente resultado! Continue praticando para manter esse ritmo.' : correct >= selected.length * .7 ? 'Bom trabalho! Revise as questões abaixo e siga praticando.' : 'A prática ajuda a avançar. Confira as respostas e tente novamente.';
+    document.querySelector('#motivation').textContent = window.MOTIVATIONS[Math.floor(Math.random() * window.MOTIVATIONS.length)];
     document.querySelector('#answer-review').innerHTML = selected.map((q, i) => {
       const ok = answers[i] === q.answer;
       const chosen = answers[i] === undefined ? 'Não respondida' : `${'ABCDE'[q.order.indexOf(answers[i])]}) ${q.options[answers[i]]}`;
       const right = `${'ABCDE'[q.order.indexOf(q.answer)]}) ${q.options[q.answer]}`;
-      return `<div class="review-item"><strong>Questão ${i + 1} · ${q.topic}</strong><br><span class="${ok ? 'correct' : 'incorrect'}">${ok ? 'Acertou' : 'Sua resposta: ' + chosen}</span>${ok ? '' : `<br>Resposta correta: ${right}`}</div>`;
+      const stem = q.text;
+      const alternatives = q.order.map((idx, oi) => `${'ABCDE'[oi]}) ${q.options[idx]}`).join('<br>');
+      return `<div class="review-item"><strong>Questão ${i + 1} · ${q.topic}</strong><p>${stem}</p><p>${alternatives}</p><span class="${ok ? 'correct' : 'incorrect'}">${ok ? 'Sua resposta: ' + chosen + ' · Acertou' : 'Sua resposta: ' + chosen}</span>${ok ? '' : `<br>Resposta correta: ${right}`}</div>`;
     }).join('');
     window.scrollTo({top:0,behavior:'smooth'});
   }
   form.addEventListener('submit', event => {
     event.preventDefault();
     name = document.querySelector('#student-name').value.trim();
-    const count = Number(new FormData(form).get('count'));
+    const values = new FormData(form);
+    const count = Number(values.get('count'));
+    activeDifficulty = values.get('difficulty');
     if (name) begin(count);
   });
   document.querySelector('#previous-button').addEventListener('click', () => { if (current > 0) { current--; render(); } });
@@ -66,5 +74,6 @@
     }
     if (current === selected.length - 1) finish(); else { current++; render(); }
   });
+  document.querySelector('#download-button').addEventListener('click', () => window.print());
   document.querySelector('#retry-button').addEventListener('click', () => { result.classList.add('hidden'); welcome.classList.remove('hidden'); window.scrollTo({top:0,behavior:'smooth'}); });
 })();
