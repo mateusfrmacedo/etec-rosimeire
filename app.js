@@ -38,6 +38,27 @@
     document.querySelector('#previous-button').disabled = current === 0;
     document.querySelector('#next-button').textContent = current === selected.length - 1 ? 'Finalizar prova ✓' : 'Próxima →';
   }
+  const reactionGifs = [
+    {id:'kF09SNtCbPYpePmFFZ', title:'Dançando de alegria', url:'https://giphy.com/gifs/excited-running-so-kF09SNtCbPYpePmFFZ'},
+    {id:'MSTqntEzXV7BmCrhA7', title:'Dança da vitória', url:'https://giphy.com/gifs/warcraft-MSTqntEzXV7BmCrhA7'},
+    {id:'3ohhwAlGml7cvIjhks', title:'Dança feliz', url:'https://giphy.com/gifs/dance-reaction-happy-3ohhwAlGml7cvIjhks'},
+    {id:'cniIdOj3l8JfJjIT4i', title:'Surpresa e espanto', url:'https://giphy.com/gifs/hyperxgaming-wow-unbelievable-surprised-gif-cniIdOj3l8JfJjIT4i'},
+    {id:'4cUCFvwICarHq', title:'Reação de surpresa', url:'https://giphy.com/gifs/Andrea-kid-kazoo-4cUCFvwICarHq'},
+    {id:'vvjUbQlZc5KzkHKBTF', title:'Uau!', url:'https://giphy.com/gifs/wow-amazing-surprised-vvjUbQlZc5KzkHKBTF'},
+    {id:'xThtadJ0MZ1rqlc3VS', title:'Comemoração', url:'https://giphy.com/gifs/nbc-super-bowl-reactions-xThtadJ0MZ1rqlc3VS'},
+    {id:'cBUEZW2ZEVBCxqDTPS', title:'Festa e comemoração', url:'https://giphy.com/gifs/party-pop-champagne-cBUEZW2ZEVBCxqDTPS'},
+    {id:'JZLaL7vxYBMwOw4Vjd', title:'Comemoração colorida', url:'https://giphy.com/gifs/dinosaur-dino-dinosandcomics-JZLaL7vxYBMwOw4Vjd'}
+  ];
+  let previousGifId = '';
+  function showRandomGif() {
+    const options = reactionGifs.filter(gif => gif.id !== previousGifId);
+    const gif = options[Math.floor(Math.random() * options.length)];
+    previousGifId = gif.id;
+    document.querySelector('#gif-frame').innerHTML = `<iframe src="https://giphy.com/embed/${gif.id}" title="GIF aleatório: ${gif.title}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+    const source = document.querySelector('#gif-source');
+    source.href = gif.url;
+    source.textContent = `Ver “${gif.title}” no GIPHY`;
+  }
   function finish() {
     const correct = selected.reduce((total, q, i) => total + (answers[i] === q.answer ? 1 : 0), 0);
     quiz.classList.add('hidden'); result.classList.remove('hidden');
@@ -54,6 +75,7 @@
           : 'Não desanime, vamos continuar estudando!';
     document.querySelector('#result-message').textContent = feedback;
     document.querySelector('#motivation').textContent = window.MOTIVATIONS[Math.floor(Math.random() * window.MOTIVATIONS.length)];
+    showRandomGif();
     document.querySelector('#answer-review').innerHTML = selected.map((q, i) => {
       const ok = answers[i] === q.answer;
       const chosen = answers[i] === undefined ? 'Não respondida' : `${'ABCDE'[q.order.indexOf(answers[i])]}) ${q.options[answers[i]]}`;
