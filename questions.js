@@ -40,8 +40,120 @@ window.QUESTIONS = [
 {topic:'Orações subordinadas · 1º sem/2018, questão 50',level:'dificil',source:true,text:'Nos trechos da canção “É você”, as orações destacadas em “É você que na vida vai comigo agora” e “É você que invadiu o centro do espelho” podem ser classificadas como',options:['subordinadas substantivas, pois exercem função de substantivo.','subordinadas adverbiais, pois exercem função de advérbio.','subordinadas adjetivas, pois exercem função de adjetivo.','coordenadas sindéticas, pois exercem função aditiva.','coordenadas assindéticas, pois exercem função conclusiva.'],answer:2},
 {topic:'Verbos · 1º sem/2019, questão 36',level:'medio',source:true,text:'Em uma charge, o verbo “ajudar” aparece em duas falas: “Ajuda!” e “Eu ajudo.” Os modos e tempos verbais dessas formas são, respectivamente,',options:['presente do indicativo e pretérito perfeito do indicativo.','presente do subjuntivo e presente do subjuntivo.','pretérito do subjuntivo e presente do indicativo.','imperativo afirmativo e presente do indicativo.','imperativo afirmativo e futuro do indicativo.'],answer:3},
 {topic:'Formação de palavras · 1º sem/2019, questão 37',level:'medio',source:true,text:'O título de uma charge, “democracinhas”, é um neologismo. Qual alternativa apresenta o processo de formação indicado corretamente?',options:['desanuviar – derivação sufixal.','inativo – derivação parassintética.','girassol – composição por hibridismo.','fidalgo – composição por aglutinação.','televisão – derivação prefixal e sufixal.'],answer:3},
-{topic:'Interpretação · 2º sem/2018, questão 48',level:'medio',source:true,text:'A Constituição Brasileira de 1988 reconhece o direito ao meio ambiente ecologicamente equilibrado e atribui ao poder público e à coletividade o dever de defendê-lo. De acordo com esse texto, é correto afirmar que',options:['a Constituição vigorou somente até 1988.','o uso dos recursos naturais sempre respeita a sustentabilidade.','a Constituição garante, por si só, que todo desenvolvimento econômico seja sustentável.','a preservação ambiental é responsabilidade apenas de cada cidadão.','a Constituição reconhece o ambiente equilibrado como direito e prevê responsabilidade compartilhada por sua proteção.'],answer:4}
+{topic:'Interpretação · 2º sem/2018, questão 48',level:'medio',source:true,text:'A Constituição Brasileira de 1988 reconhece o direito ao meio ambiente ecologicamente equilibrado e atribui ao poder público e à coletividade o dever de defendê-lo. De acordo com esse texto, é correto afirmar que',options:['a Constituição vigorou somente até 1988.','o uso dos recursos naturais sempre respeita a sustentabilidade.','a Constituição garante, por si só, que todo desenvolvimento econômico seja sustentável.','a preservação ambiental é responsabilidade apenas de cada cidadão.','a Constituição reconhece o ambiente equilibrado como direito e prevê responsabilidade compartilhada por sua proteção.'],answer:4},
+{topic:'Interpretação · 1º sem/2025, questão 47',level:'medio',source:true,sourceExam:'Vestibulinho 1º sem/2025, questão 47',text:'No texto “Biotecnologia Indígena”, pronomes aparecem destacados para retomar ou antecipar informações. Considerando o contexto, assinale a alternativa que identifica corretamente a referência dos pronomes destacados.',options:['“ela” retoma a região do médio-alto Rio Negro.','“criá-la” retoma a colonização portuguesa.','“aqueles” retoma as florestas primárias.','“nelas” retoma as técnicas de domesticação.','“eles” retoma os pesquisadores.'],answer:2},
+{topic:'Coesão e sentido · 1º sem/2025, questão 48',level:'medio',source:true,sourceExam:'Vestibulinho 1º sem/2025, questão 48',text:'Assinale a alternativa em que o elemento coesivo destacado contribui para expressar uma hipótese.',options:['“Entre 5 e 8 mil anos atrás, o cupuaçu estava sendo desenvolvido na região do médio-alto Rio Negro.”','“...ela não surgiu da evolução natural da floresta: foi obra da mão humana.”','“Os indígenas [...] empregaram técnicas de domesticação de plantas para criá-la.”','“Se o cupuaçu não nascia ‘naturalmente’ em áreas de fraca interferência humana, era razoável supor que ele seria uma variante domesticada do cupuí...”','“Antes da colonização, a Amazônia foi um centro de domesticação e modificação de espécies selvagens.”'],answer:3},
+{topic:'Pontuação · 1º sem/2025, questão 49',level:'facil',source:true,sourceExam:'Vestibulinho 1º sem/2025, questão 49',text:'No segundo parágrafo do texto, os travessões em “– os guias locais da região amazônica –” destacam trecho que se refere aos mateiros, apresentando uma',options:['contradição.','explicação.','retificação.','enumeração.','advertência.'],answer:1},
+{topic:'Interpretação · 1º sem/2025, questão 50',level:'dificil',source:true,sourceExam:'Vestibulinho 1º sem/2025, questão 50',text:'No poema de João Doederlein, o eu lírico compara seu crescimento ao de uma árvore que enfrenta dificuldades e busca alcançar o céu. Depreende-se do poema que o processo de crescimento pressupõe',options:['reconhecer que esse processo é justo por exigir subserviência e aceitação.','conciliar a aceitação de si mesmo com a necessidade de ser resiliente diante dos problemas enfrentados.','expor sem receios os sofrimentos para depender do apoio das pessoas próximas.','acelerar a evolução por meio da busca constante pelo sucesso a qualquer custo.','resignar-se a viver de maneira limitada, mesmo quando há condições para se desenvolver.'],answer:1},
+{topic:'Interpretação · 1º sem/2024, questão 46',level:'medio',source:true,sourceExam:'Vestibulinho 1º sem/2024, questão 46',text:'A tirinha utiliza a ironia para evidenciar que apenas o esforço, em determinadas situações, não traz resultados favoráveis ao indivíduo. Para evitar esse desfecho sem negligenciar os projetos de vida, deve-se',options:['ignorar experiências anteriores bem-sucedidas.','permanecer no que é conhecido, evitando a inovação.','imaginar cenários otimistas e esperar que outras pessoas realizem seus projetos.','elaborar planos de ação considerando possíveis obstáculos à realização dos objetivos.','confiar nos instintos e aceitar qualquer opinião de pessoas da mesma área.'],answer:3},
+{topic:'Interpretação · 2º sem/2023, questão 50',level:'medio',source:true,sourceExam:'Vestibulinho 2º sem/2023, questão 50',text:'Nos quadrinhos, o humor é utilizado para criticar o uso constante de recursos tecnológicos que podem levar à perda da autonomia. Uma atitude possível para combater esse processo é',options:['usar o celular como ferramenta de comunicação por todos, garantindo igualdade.','substituir o celular por computadores portáteis, que verificam melhor as informações.','ensinar resiliência para aumentar a necessidade de contatos virtuais.','valorizar linguagem informal, pois o desconhecimento linguístico impede a comunicação fora da internet.','valorizar o autoconhecimento e o senso crítico, competências que ajudam a formar indivíduos questionadores e independentes.'],answer:4},
+{topic:'Interpretação de texto · 2º sem/2026, questão 33',level:'medio',source:true,sourceExam:'Vestibulinho 2º sem/2026, questão 33',text:'Leia a frase de Santos Dumont: “Os países distantes se encontrarão, apesar das barreiras de montanhas, rios e florestas.” Qual alternativa reproduz corretamente o sentido dessa frase?',options:['Embora haja barreiras de montanhas, rios e florestas, os países distantes se encontrarão.','As barreiras são de montanhas, rios e florestas, portanto os países distantes se encontram.','Como inexistem barreiras entre montanhas, rios e florestas, os países distantes se encontrarão.','Se os países distantes se encontrarem, as montanhas, rios e florestas construirão barreiras entre eles.','Ainda que existam países distanciados por barreiras de montanhas, rios e florestas, nos encontraremos.'],answer:0},
+{topic:'Interpretação de canção · 2º sem/2026, questão 34',level:'medio',source:true,sourceExam:'Vestibulinho 2º sem/2026, questão 34',text:'Na canção “O Trenzinho do Caipira”, de Ferreira Gullar e Heitor Villa-Lobos, os termos “rodar”, “ciranda” e “girar” reforçam a imagem',options:['do percurso planejado do trem e do destino certo do personagem.','do tédio dos passageiros diante de paisagens repetidas.','do movimento do trem e da vida.','da mudança de personagens durante o trajeto.','da alta velocidade do trem ao percorrer diferentes lugares.'],answer:3},
+{topic:'Interpretação de canção · 2º sem/2026, questão 35',level:'dificil',source:true,sourceExam:'Vestibulinho 2º sem/2026, questão 35',text:'Na canção “O Trenzinho do Caipira”, os termos destacados sugerem',options:['o percurso planejado do trem e o destino certo do personagem.','o tédio dos passageiros ao verem paisagens repetidas.','os diversos cenários percorridos pelo trem em sua trajetória sem destino certo.','a mudança de personagens ao longo da viagem.','a alta velocidade do trem ao percorrer vários lugares em um único dia.'],answer:2}
+
 ];
+
+window.QUESTIONS.forEach((question, index) => {
+  if (!question.level) question.level = index < 10 ? 'facil' : index < 20 ? 'medio' : 'dificil';
+});
+
+// Corrige itens em que a transcrição inicial desalinhava enunciado, alternativas ou gabarito.
+const _question = (exam, number) => window.QUESTIONS.find(q => q.topic.includes(exam) && q.topic.includes(`questão ${number}`));
+const _formation2017 = _question('2º sem/2017', 50);
+_formation2017.options = [
+  'há a junção de dois ou mais radicais. / há anexação de sufixo na palavra de origem.',
+  'há anexação de sufixo na palavra de origem. / há a criação de novas palavras.',
+  'há a criação de novas palavras. / a palavra é constituída por radicais de diferentes línguas.',
+  'a palavra é constituída por radicais de diferentes línguas. / as palavras imitam um som, como ruídos e gritos.',
+  'há a criação de novas palavras. / há anexação de sufixo na palavra de origem.'
+];
+_formation2017.answer = 4;
+
+const _question2024 = _question('1º sem/2024', 46);
+_question2024.topic = 'Planejamento de projetos';
+_question2024.text = 'Ao planejar um projeto de longo prazo, qual atitude ajuda a lidar com imprevistos sem abandonar o objetivo?';
+_question2024.options = [
+  'Ignorar experiências anteriores que deram certo.',
+  'Evitar qualquer inovação e permanecer apenas no que já é conhecido.',
+  'Esperar que outras pessoas realizem o projeto.',
+  'Elaborar planos de ação considerando possíveis obstáculos.',
+  'Aceitar qualquer opinião sem avaliar sua pertinência.'
+];
+_question2024.answer = 3;
+_question2024.source = false;
+
+const _pronouns2025 = _question('1º sem/2025', 47);
+_pronouns2025.topic = 'Coesão pronominal · 1º sem/2025, questão 46';
+_pronouns2025.text = 'Leia o trecho de “Biotecnologia Indígena”. O texto informa que o cupuaçu foi desenvolvido por povos indígenas na região do médio-alto Rio Negro. A fruta, ela (I), não surgiu da evolução natural da floresta; os indígenas empregaram técnicas de domesticação para criá-la (II). Pesquisadores buscaram florestas primárias, aquelas (III) com pouca interferência humana, e constataram que nelas (IV) não havia cupuaçu. O texto também menciona que ele (V) seria uma variante domesticada do cupuí, explica a seleção artificial (VI), situa o processo no Holoceno, época na qual (VII) ainda vivemos, e afirma que frutos (VIII) foram manipulados por povos indígenas (IX). Analisando as referências dos pronomes em algarismos romanos, assinale a alternativa correta.';
+_pronouns2025.options = [
+  'I e II se referem ao termo “culinária”.',
+  'II, III e IV se referem ao termo “florestas”.',
+  'IV e V se referem à expressão “variante domesticada”.',
+  'VI e VII se referem, respectivamente, a “frutas” e “pré-colombianos”.',
+  'VIII e IX se referem, respectivamente, a “frutos” e “povos indígenas”.'
+];
+_pronouns2025.answer = 4;
+
+window.QUESTIONS.push({
+  topic: 'Interpretação · 1º sem/2025, questão 47',
+  level: 'medio',
+  source: true,
+  sourceType: 'adaptada',
+  sourceExam: 'Vestibulinho ETEC · 1º sem/2025',
+  sourceQuestion: 47,
+  text: 'Sobre as informações do texto “Biotecnologia Indígena”, assinale a alternativa correta. O cupuaçu foi domesticado na Amazônia por povos indígenas, e o texto distingue uma etapa antiga desse processo de uma fase mais recente.',
+  options: [
+    'Houve interferência humana nas florestas primárias, pois os guias locais encontraram cupuaçu e cupuí nessas áreas.',
+    'A interferência esporádica dos povos originários acarretou o surgimento de novas espécies, como o cupuí e o cupuaçu.',
+    'O processo de domesticação teve duas etapas: a primeira ocorreu entre 5 e 8 mil anos atrás; a segunda, há cerca de 200 anos.',
+    'As civilizações pré-colombianas se apropriaram dos estudos de Darwin para desenvolver frutas e grãos mais adaptados.',
+    'Os povos originários utilizaram modificação genética e desmatamento para ampliar a produção de alimentos.'
+  ],
+  answer: 2
+});
+
+const _train34 = _question('2º sem/2026', 34);
+_train34.topic = 'Interpretação de canção · 2º sem/2026, questão 34';
+_train34.text = 'Leia a letra de “O Trenzinho do Caipira”: “Lá vai o trem com o menino\nLá vai a vida a rodar\nLá vai ciranda e destino\nCidade e noite a girar.\nLá vai o trem sem destino\nPro dia novo encontrar\nCorrendo vai pela terra\nVai pela serra, vai pelo mar.\nCantando pela serra, o luar\nCorrendo entre as estrelas, a voar\nNo ar\nNo ar.” O uso dos termos destacados “terra”, “serra” e “mar”';
+_train34.options = [
+  'representa o percurso planejado do trem, refletindo o destino certo do personagem.',
+  'reforça o tédio dos passageiros ao ver a mesma paisagem em lugares diferentes.',
+  'sugere os diversos cenários percorridos pelo trem em sua trajetória sem destino certo.',
+  'expressa a mudança de personagens durante a trajetória percorrida pelo trem.',
+  'indica a alta velocidade do trem ao percorrer lugares diferentes em um único dia.'
+];
+_train34.answer = 2;
+
+const _train35 = _question('2º sem/2026', 35);
+_train35.topic = 'Interpretação de canção · 2º sem/2026, questão 35';
+_train35.text = 'Leia a letra de “O Trenzinho do Caipira”: “Lá vai o trem com o menino\nLá vai a vida a rodar\nLá vai ciranda e destino\nCidade e noite a girar.\nLá vai o trem sem destino\nPro dia novo encontrar\nCorrendo vai pela terra\nVai pela serra, vai pelo mar.\nCantando pela serra, o luar\nCorrendo entre as estrelas, a voar\nNo ar\nNo ar.” Sobre a canção, é correto afirmar que';
+_train35.options = [
+  'a imagem do luar “correndo entre as estrelas” evidencia a nostalgia do menino que sente falta de sua casa.',
+  'predomina a linguagem denotativa devido ao uso literal dos termos, como em “lá vai a vida a rodar”.',
+  '“pro dia novo encontrar” auxilia a construção de uma hipérbole que louva os meios de transporte.',
+  'os termos “rodar”, “ciranda” e “girar” reforçam a imagem do movimento do trem e da vida.',
+  'as informações estão organizadas em três parágrafos com quatro versos, e sem rimas.'
+];
+_train35.answer = 3;
+
+const _technology2023 = _question('2º sem/2023', 50);
+_technology2023.text = 'O uso constante de recursos tecnológicos pode reduzir a autonomia quando as pessoas passam a depender deles para decisões cotidianas. Qual atitude pode ajudar a enfrentar esse problema?';
+
+const _poem2025 = _question('1º sem/2025', 50);
+_poem2025.text = 'Leia o poema de João Doederlein: “Cresci feito árvore torta\nnuma horta\nque não deveria ter dado espaço para mim.\nCresci perdendo folhas,\nalcancei o sol cedo demais,\nqueimei a ponta dos meus galhos,\ne choro junto ao céu em dias de chuva\npra ninguém perceber.\nCrescer é um pouco de se adaptar\ncom se aceitar.\nÉ um pouco injusto,\nmas é necessário.\nMinhas raízes me empurram pro céu,\nsou árvore que queria ser estrela.” Depreende-se do poema que o processo de crescimento pressupõe';
+
+window.QUESTIONS.forEach(question => {
+  const sourceMatch = question.topic.match(/·\s*(\d[ºª].*?),\s*questão\s*(\d+)/i);
+  if (question.source) {
+    question.sourceType = 'adaptada';
+    if (sourceMatch) {
+      question.sourceExam = `Vestibulinho ETEC · ${sourceMatch[1]}`;
+      question.sourceQuestion = Number(sourceMatch[2]);
+    }
+  } else {
+    question.sourceType = 'autoral';
+  }
+});
 
 // Mensagens autorais de incentivo; não são citações atribuídas a terceiros.
 const _motivationStarts = [

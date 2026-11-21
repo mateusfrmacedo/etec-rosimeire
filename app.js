@@ -4,7 +4,8 @@
   const result = document.querySelector('#result');
   const form = document.querySelector('#start-form');
   const content = document.querySelector('#question-content');
-  let name = '', selected = [], answers = {}, current = 0, previousSet = '', activeDifficulty = 'facil';
+  let name = '', selected = [], answers = {}, current = 0, previousSet = new Set(), activeDifficulty = 'facil';
+  const usedByLevel = {facil: new Set(), medio: new Set(), dificil: new Set()};
 
   function shuffle(items) {
     const result = [...items];
@@ -15,14 +16,23 @@
     return result;
   }
   function begin(count) {
-    const difficultyPools = {facil: [0,3,5,7,9,12,14,17,19,22,30,33,36], medio: [1,4,6,8,10,13,15,18,20,23,31,34,37], dificil: [2,11,16,21,24,25,26,27,28,29,32,35,38]};
-    const allowed = new Set(difficultyPools[activeDifficulty]);
-    let pool = shuffle(window.QUESTIONS.filter((_, index) => allowed.has(index)));
-    count = Math.min(count, pool.length);
-    let ids = pool.slice(0, count).map(q => q.text).sort().join('|');
-    if (ids === previousSet) pool = shuffle(window.QUESTIONS);
-    selected = pool.slice(0, count).map(q => ({...q, order: shuffle([0,1,2,3,4])}));
-    previousSet = selected.map(q => q.text).sort().join('|');
+    const bank = shuffle(window.QUESTIONS.filter(q => q.level === activeDifficulty));
+    const used = usedByLevel[activeDifficulty];
+    count = Math.min(count, bank.length);
+    if (used.size === bank.length) used.clear();
+    let chosen = shuffle(bank.filter(q => !used.has(q.text) && !previousSet.has(q.text))).slice(0, count);
+    if (chosen.length < count) {
+      const chosenTexts = new Set(chosen.map(q => q.text));
+      const recycled = shuffle(bank.filter(q => used.has(q.text) && !previousSet.has(q.text) && !chosenTexts.has(q.text)));
+      chosen = [...chosen, ...recycled.slice(0, count - chosen.length)];
+    }
+    if (chosen.length < count) {
+      used.clear();
+      chosen = shuffle(bank.filter(q => !previousSet.has(q.text))).slice(0, count);
+    }
+    selected = chosen.map(q => ({...q, order: shuffle([0,1,2,3,4])}));
+    selected.forEach(q => used.add(q.text));
+    previousSet = new Set(selected.map(q => q.text));
     answers = {}; current = 0;
     welcome.classList.add('hidden'); result.classList.add('hidden'); quiz.classList.remove('hidden');
     document.querySelector('#student-greeting').textContent = `Boa prova, ${name}! · ${activeDifficulty[0].toUpperCase()+activeDifficulty.slice(1)}`;
@@ -33,7 +43,10 @@
     document.querySelector('#progress-label').textContent = `Questão ${current + 1} de ${selected.length}`;
     document.querySelector('#progress-bar').style.width = `${((current + 1) / selected.length) * 100}%`;
     const options = q.order.map((original, index) => `<label class="answer"><input type="radio" name="answer" value="${original}" ${answers[current] === original ? 'checked' : ''}><span class="letter">${'ABCDE'[index]})</span><span>${q.options[original]}</span></label>`).join('');
-    content.innerHTML = `<p class="question-number">${q.topic}</p><p class="question-text">${q.text}</p><div class="answers">${options}</div>`;
+    const provenance = q.sourceType === 'adaptada'
+      ? `Adaptada do ${q.sourceExam || 'Vestibulinho ETEC'}${q.sourceQuestion ? ` · questão ${q.sourceQuestion}` : ''}`
+      : 'Questão autoral · prática no padrão ETEC';
+    content.innerHTML = `<p class="question-number">${q.topic.split('·')[0].trim()}</p><p class="question-source">${provenance}</p><p class="question-text">${q.text}</p><div class="answers">${options}</div>`;
     content.querySelectorAll('input').forEach(input => input.addEventListener('change', () => { answers[current] = Number(input.value); }));
     document.querySelector('#previous-button').disabled = current === 0;
     document.querySelector('#next-button').textContent = current === selected.length - 1 ? 'Finalizar prova ✓' : 'Próxima →';
@@ -79,7 +92,8 @@
       const right = `${'ABCDE'[q.order.indexOf(q.answer)]}) ${q.options[q.answer]}`;
       const stem = q.text;
       const alternatives = q.order.map((idx, oi) => `${'ABCDE'[oi]}) ${q.options[idx]}`).join('<br>');
-      return `<div class="review-item"><strong>Questão ${i + 1} · ${q.topic}</strong><p>${stem}</p><p>${alternatives}</p><span class="${ok ? 'correct' : 'incorrect'}">${ok ? 'Sua resposta: ' + chosen + ' · Acertou' : 'Sua resposta: ' + chosen}</span>${ok ? '' : `<br>Resposta correta: ${right}`}</div>`;
+      const sourceLabel = q.sourceType === 'adaptada' ? `Adaptada do ${q.sourceExam || 'Vestibulinho ETEC'}${q.sourceQuestion ? ` · questão ${q.sourceQuestion}` : ''}` : 'Questão autoral · prática no padrão ETEC';
+      return `<div class="review-item"><strong>Questão ${i + 1} · ${q.topic.split('·')[0].trim()}</strong><p class="question-source">${sourceLabel}</p><p>${stem}</p><p>${alternatives}</p><span class="${ok ? 'correct' : 'incorrect'}">${ok ? 'Sua resposta: ' + chosen + ' · Acertou' : 'Sua resposta: ' + chosen}</span>${ok ? '' : `<br>Resposta correta: ${right}`}</div>`;
     }).join('');
     window.scrollTo({top:0,behavior:'smooth'});
   }
@@ -105,5 +119,19 @@
     document.querySelector('#exam-date').textContent = new Date().toLocaleDateString('pt-BR');
     window.print();
   });
+  function updateAvailableCounts() {
+    const level = new FormData(form).get('difficulty');
+    const available = window.QUESTIONS.filter(q => q.level === level).length;
+    form.querySelectorAll('input[name="count"]').forEach(input => {
+      input.disabled = Number(input.value) > available;
+      if (input.disabled && input.checked) {
+        const fallback = form.querySelector('input[name="count"]:not(:disabled)');
+        if (fallback) fallback.checked = true;
+      }
+    });
+    document.querySelector('#pool-note').textContent = `Banco: ${window.QUESTIONS.length} questões · ${available} no nível ${level}.`;
+  }
+  form.querySelectorAll('input[name="difficulty"]').forEach(input => input.addEventListener('change', updateAvailableCounts));
+  updateAvailableCounts();
   document.querySelector('#retry-button').addEventListener('click', () => { result.classList.add('hidden'); welcome.classList.remove('hidden'); window.scrollTo({top:0,behavior:'smooth'}); });
 })();
