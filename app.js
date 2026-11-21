@@ -44,7 +44,15 @@
     document.querySelector('#result-name').textContent = name;
     document.querySelector('#score-number').textContent = `${correct}/${selected.length}`;
     document.querySelector('#score-detail').textContent = `${Math.round(correct / selected.length * 100)}% de acertos`;
-    document.querySelector('#result-message').textContent = correct === selected.length ? 'Excelente resultado! Continue praticando para manter esse ritmo.' : correct >= selected.length * .7 ? 'Bom trabalho! Revise as questões abaixo e siga praticando.' : 'A prática ajuda a avançar. Confira as respostas e tente novamente.';
+    const percentage = correct / selected.length * 100;
+    const feedback = percentage === 100
+      ? 'Excelente. Você é demais!!!'
+      : percentage > 80
+        ? 'Parabéns, está no caminho certo!'
+        : percentage > 50
+          ? 'Está indo bem! Muito bem, vamos continuar estudando.'
+          : 'Não desanime, vamos continuar estudando!';
+    document.querySelector('#result-message').textContent = feedback;
     document.querySelector('#motivation').textContent = window.MOTIVATIONS[Math.floor(Math.random() * window.MOTIVATIONS.length)];
     document.querySelector('#answer-review').innerHTML = selected.map((q, i) => {
       const ok = answers[i] === q.answer;
