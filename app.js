@@ -62,11 +62,32 @@
     {id:'cBUEZW2ZEVBCxqDTPS', alt:'Festa e comemoração'},
     {id:'JZLaL7vxYBMwOw4Vjd', alt:'Comemoração colorida'}
   ];
+  const gifStorageKey = 'etecRosimeireGifCycle';
   let previousGifId = '';
+  let gifDeck = [];
+  try {
+    const savedGifState = JSON.parse(localStorage.getItem(gifStorageKey) || '{}');
+    const availableIds = new Set(reactionGifs.map(gif => gif.id));
+    gifDeck = Array.isArray(savedGifState.deck) ? savedGifState.deck.filter(id => availableIds.has(id)) : [];
+    previousGifId = availableIds.has(savedGifState.last) ? savedGifState.last : '';
+  } catch {
+    // Keep an in-memory shuffled cycle when browser storage is unavailable.
+  }
   function showRandomGif() {
-    const options = reactionGifs.filter(gif => gif.id !== previousGifId);
-    const gif = options[Math.floor(Math.random() * options.length)];
+    if (!gifDeck.length) {
+      gifDeck = shuffle(reactionGifs.map(gif => gif.id));
+      if (gifDeck.length > 1 && gifDeck[0] === previousGifId) {
+        [gifDeck[0], gifDeck[1]] = [gifDeck[1], gifDeck[0]];
+      }
+    }
+    const gif = reactionGifs.find(item => item.id === gifDeck.shift());
+    if (!gif) return;
     previousGifId = gif.id;
+    try {
+      localStorage.setItem(gifStorageKey, JSON.stringify({deck: gifDeck, last: previousGifId}));
+    } catch {
+      // The current page still continues its in-memory cycle.
+    }
     document.querySelector('#gif-frame').innerHTML = `<img src="https://media.giphy.com/media/${gif.id}/giphy.gif" alt="${gif.alt}" loading="lazy" referrerpolicy="no-referrer">`;
   }
   function finish() {
