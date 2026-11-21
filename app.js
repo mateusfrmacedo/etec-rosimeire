@@ -39,22 +39,22 @@
     document.querySelector('#next-button').textContent = current === selected.length - 1 ? 'Finalizar prova ✓' : 'Próxima →';
   }
   const reactionGifs = [
-    {id:'kF09SNtCbPYpePmFFZ', title:'Dançando de alegria', url:'https://giphy.com/gifs/excited-running-so-kF09SNtCbPYpePmFFZ'},
-    {id:'MSTqntEzXV7BmCrhA7', title:'Dança da vitória', url:'https://giphy.com/gifs/warcraft-MSTqntEzXV7BmCrhA7'},
-    {id:'3ohhwAlGml7cvIjhks', title:'Dança feliz', url:'https://giphy.com/gifs/dance-reaction-happy-3ohhwAlGml7cvIjhks'},
-    {id:'cniIdOj3l8JfJjIT4i', title:'Surpresa e espanto', url:'https://giphy.com/gifs/hyperxgaming-wow-unbelievable-surprised-gif-cniIdOj3l8JfJjIT4i'},
-    {id:'4cUCFvwICarHq', title:'Reação de surpresa', url:'https://giphy.com/gifs/Andrea-kid-kazoo-4cUCFvwICarHq'},
-    {id:'vvjUbQlZc5KzkHKBTF', title:'Uau!', url:'https://giphy.com/gifs/wow-amazing-surprised-vvjUbQlZc5KzkHKBTF'},
-    {id:'xThtadJ0MZ1rqlc3VS', title:'Comemoração', url:'https://giphy.com/gifs/nbc-super-bowl-reactions-xThtadJ0MZ1rqlc3VS'},
-    {id:'cBUEZW2ZEVBCxqDTPS', title:'Festa e comemoração', url:'https://giphy.com/gifs/party-pop-champagne-cBUEZW2ZEVBCxqDTPS'},
-    {id:'JZLaL7vxYBMwOw4Vjd', title:'Comemoração colorida', url:'https://giphy.com/gifs/dinosaur-dino-dinosandcomics-JZLaL7vxYBMwOw4Vjd'}
+    {id:'kF09SNtCbPYpePmFFZ', alt:'Dançando de alegria'},
+    {id:'MSTqntEzXV7BmCrhA7', alt:'Dança da vitória'},
+    {id:'3ohhwAlGml7cvIjhks', alt:'Dança feliz'},
+    {id:'cniIdOj3l8JfJjIT4i', alt:'Surpresa e espanto'},
+    {id:'4cUCFvwICarHq', alt:'Reação de surpresa'},
+    {id:'vvjUbQlZc5KzkHKBTF', alt:'Uau!'},
+    {id:'xThtadJ0MZ1rqlc3VS', alt:'Comemoração'},
+    {id:'cBUEZW2ZEVBCxqDTPS', alt:'Festa e comemoração'},
+    {id:'JZLaL7vxYBMwOw4Vjd', alt:'Comemoração colorida'}
   ];
   let previousGifId = '';
   function showRandomGif() {
     const options = reactionGifs.filter(gif => gif.id !== previousGifId);
     const gif = options[Math.floor(Math.random() * options.length)];
     previousGifId = gif.id;
-    document.querySelector('#gif-frame').innerHTML = `<iframe src="https://giphy.com/embed/${gif.id}" title="GIF aleatório: ${gif.title}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+    document.querySelector('#gif-frame').innerHTML = `<img src="https://media.giphy.com/media/${gif.id}/giphy.gif" alt="${gif.alt}" loading="lazy" referrerpolicy="no-referrer">`;
   }
   function finish() {
     const correct = selected.reduce((total, q, i) => total + (answers[i] === q.answer ? 1 : 0), 0);
